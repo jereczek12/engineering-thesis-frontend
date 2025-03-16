@@ -1,0 +1,24 @@
+<!-- evaluation-bar.component.html -->
+<div class="evaluation-container">
+  <div class="evaluation-text">{{ formatEvaluation() }}</div>
+  <div class="bar-container">
+    <div class="bar-background">
+      <div class="bar-section red-section"
+           [ngStyle]="{
+             'height': indicatorPosition + '%'
+           }">
+      </div>
+      <div class="bar-section green-section"
+           [ngStyle]="{
+             'height': (100 - indicatorPosition) + '%',
+             'top': indicatorPosition + '%'
+           }">
+      </div>
+      <div class="indicator" 
+           [ngStyle]="{
+             'top': indicatorPosition + '%'
+           }">
+      </div>
+    </div>
+  </div>
+</div>

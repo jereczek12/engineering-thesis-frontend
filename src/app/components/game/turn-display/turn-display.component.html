@@ -1,0 +1,36 @@
+<div class="game-header" *ngIf="gameState?.boardStateEntity?.currentPlayer">
+  <div class="player-info-card" 
+       [ngClass]="{'active-turn': isPlayerTurn()}">
+    <div class="player-avatar" [ngClass]="getColorName(getCurrentPlayerColor()).toLowerCase()">
+      <div class="piece-indicator"></div>
+    </div>
+    <div class="player-details">
+      <span class="player-name">{{getCurrentPlayerName()}}</span>
+      <span class="player-color">Playing as: {{getColorName(getCurrentPlayerColor())}}</span>
+    </div>
+  </div>
+  
+  <div class="turn-indicator">
+    <div class="turn-arrow" 
+         [ngClass]="{
+           'left-arrow': isPlayerTurn(),
+           'right-arrow': !isPlayerTurn()
+         }"></div>
+    <div class="turn-text">
+      <span class="highlight">
+        {{getCurrentTurnColor()}}'s Turn
+      </span>
+    </div>
+  </div>
+  
+  <div class="player-info-card opponent" 
+       [ngClass]="{'active-turn': getCurrentTurnColor() === getColorName(getOpponentColor())}">
+    <div class="player-details text-right">
+      <span class="player-name">{{getOpponentName()}}</span>
+      <span class="player-color">Playing as: {{getColorName(getOpponentColor())}}</span>
+    </div>
+    <div class="player-avatar" [ngClass]="getColorName(getOpponentColor()).toLowerCase()">
+      <div class="piece-indicator"></div>
+    </div>
+  </div>
+</div>

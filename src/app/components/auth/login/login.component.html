@@ -1,0 +1,26 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-content>
+        <h2 class="login-title">Login</h2>
+
+        <form class="login-form" (ngSubmit)="onLogin()" #loginForm="ngForm">
+          <mat-form-field class="login-input">
+            <mat-icon matPrefix>account_circle</mat-icon>
+            <input matInput type="text" name="username" [(ngModel)]="username" required placeholder="Username">
+          </mat-form-field>
+          
+          <mat-form-field class="login-input">
+            <mat-icon matPrefix>lock</mat-icon>
+            <input matInput type="password" name="password" [(ngModel)]="password" required placeholder="Password">
+          </mat-form-field>
+          
+          <div class="login-buttons">
+            <button mat-raised-button color="accent" type="submit" [disabled]="!loginForm.valid" class="login-button">
+              <mat-icon>login</mat-icon>
+              Login
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

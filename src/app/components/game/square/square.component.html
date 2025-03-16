@@ -1,0 +1,21 @@
+<div
+  class="square"
+  [ngClass]="{
+    dark: isDark,
+    light: !isDark,
+    'highlight-green': highlightColor === 'green',
+    'highlight-red': highlightColor === 'red',
+    'intermediate': isIntermediate,
+    'selected': isSelected
+  }"
+  (click)="onSquareClick()"
+>
+  <span class="square-number" *ngIf="number">{{ number }}</span>
+  <app-piece
+    *ngIf="state !== 0"
+    [state]="state"
+    [squareNumber]="number"
+    [isSelected]="isSelected"
+    (pieceClick)="onPieceClick($event)"
+  ></app-piece>
+</div>

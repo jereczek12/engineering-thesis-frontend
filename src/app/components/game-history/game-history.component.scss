@@ -1,0 +1,15 @@
+.history-container {
+    padding: 20px;
+    
+    .history-table {
+      width: 100%;
+      
+      th.mat-header-cell {
+        font-weight: bold;
+      }
+      
+      td.mat-cell {
+        padding: 10px;
+      }
+    }
+  }

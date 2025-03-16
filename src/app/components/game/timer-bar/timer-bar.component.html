@@ -1,0 +1,9 @@
+<div class="timer-container">
+  <div class="custom-progress-bar">
+    <div class="progress-background">
+      <div class="progress-fill tips-color" [style.width.%]="progress"></div>
+      <span class="status-text" *ngIf="isGeneratingTips">Generating tips...</span>
+    </div>
+  </div>
+  <div class="time-text" *ngIf="isGeneratingTips">{{displayTime}}s</div>
+</div>

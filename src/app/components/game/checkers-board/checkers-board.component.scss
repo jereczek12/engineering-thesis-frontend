@@ -1,0 +1,213 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: calc(100vh - 64px); // Accounting for navbar
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  .player-info, .turn-info {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+td {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .empty {
+    background-color: #eee;
+  }
+  
+  .black {
+    background-color: #000;
+  }
+  
+  .white {
+    background-color: #fff;
+  }
+  
+  .black-king {
+    background-color: #000;
+    border: 2px solid #ff0;
+  }
+  
+  .white-king {
+    background-color: #fff;
+    border: 2px solid #ff0;
+  }
+  .game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .winner-message {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    
+    h2 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .game-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    .player-info-card {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #f5f5f5;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      
+      &.active-turn {
+        background: #e3f2fd;
+        box-shadow: 0 0 0 2px #2196F3;
+      }
+      
+      &.opponent {
+        flex-direction: row-reverse;
+        
+        .player-details {
+          text-align: right;
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+    }
+    
+    .player-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &.white {
+        background: #f5f5f5;
+        border: 2px solid #ddd;
+        
+        .piece-indicator {
+          background: #fff;
+          border: 1px solid #ddd;
+        }
+      }
+      
+      &.black {
+        background: #333;
+        border: 2px solid #222;
+        
+        .piece-indicator {
+          background: #222;
+          border: 1px solid #111;
+        }
+      }
+      
+      .piece-indicator {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+    
+    .player-details {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+      
+      .player-name {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+      
+      .player-color {
+        font-size: 0.9rem;
+        color: #666;
+      }
+    }
+    
+    .turn-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .turn-arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        
+        &.left-arrow {
+          border-width: 10px 15px 10px 0;
+          border-color: transparent #2196F3 transparent transparent;
+        }
+        
+        &.right-arrow {
+          border-width: 10px 0 10px 15px;
+          border-color: transparent transparent transparent #2196F3;
+        }
+      }
+      
+      .turn-text {
+        padding: 10px 15px;
+        background: #2196F3;
+        color: white;
+        border-radius: 20px;
+        margin-top: 10px;
+        font-weight: bold;
+        
+        .highlight {
+          animation: pulse 1.5s infinite;
+        }
+      }
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
+  
+  .text-right {
+    text-align: right;
+  }

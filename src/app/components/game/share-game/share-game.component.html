@@ -1,0 +1,11 @@
+<!-- app/components/game/share-game/share-game.component.html -->
+<div class="share-container" *ngIf="isPvpGame">
+    <div class="game-id-box">
+      <span class="game-id-label">Game ID:</span>
+      <span class="game-id">{{gameId}}</span>
+      <button mat-icon-button (click)="copyGameId()" matTooltip="Copy Game ID">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+    <p class="share-text">Share this ID with a friend to play together</p>
+  </div>

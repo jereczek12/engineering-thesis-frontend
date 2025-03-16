@@ -1,0 +1,25 @@
+// In board.component.scss
+.board {
+  border: 15px solid #654321;  // Rich wooden border
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: #deb887;  // Burlywood color for wooden effect
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+table {
+  border: 15px solid #654321;
+  border-radius: 8px;
+  background: #deb887;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+td {
+  padding: 0;
+  position: relative;
+}

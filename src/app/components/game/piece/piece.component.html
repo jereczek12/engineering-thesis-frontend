@@ -1,0 +1,8 @@
+<div class="piece" [ngClass]="{
+  'black': state === PieceTypes.BLACK,
+  'white': state === PieceTypes.WHITE,
+  'black-king': state === PieceTypes.BLACK_KING,
+  'white-king': state === PieceTypes.WHITE_KING,
+  'selected': isSelected
+}"
+(click)="onPieceClick($event)"></div>

@@ -1,0 +1,25 @@
+<div class="game-container">
+  <app-turn-display [gameState]="gameState" [currentPlayer]="currentPlayer">
+  </app-turn-display>
+
+  <div class="game-layout">
+    <app-board *ngIf="gameState.boardStateEntity; else loading" [tips]="gameState.gameData.tips"
+      [boardState]="gameState.boardStateEntity" [longestSequence]="gameState.gameData.possibleMoves[0]?.length || 1"
+      (moveMade)="submitMove($event)"></app-board>
+    <app-evaluation-bar *ngIf="gameState.pvp===false" [evaluation]="gameState.gameData.evaluation">
+    </app-evaluation-bar>
+  </div>
+  <app-timer-bar *ngIf="gameState.pvp===false" [isGeneratingTips]="isGeneratingTips">
+  </app-timer-bar>
+  <div class="game-overlay" *ngIf="isGameEnded">
+    <div class="winner-message">
+      <h2>Game Over!</h2>
+      <p>{{winnerMessage}}</p>
+      <button mat-raised-button color="primary" routerLink="/">Return to Main Menu</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

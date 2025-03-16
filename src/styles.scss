@@ -1,0 +1,25 @@
+@import 'theme';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@media (max-width: 768px) {
+    .board {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .main-card {
+      margin: 10px;
+    }
+  
+    .mat-toolbar {
+      padding: 0 1rem;
+    }
+  }
+  .error-snackbar {
+    color: white;
+    margin-bottom: 20px;
+    
+    .mat-simple-snackbar-action {
+      color: white;
+    }
+  }

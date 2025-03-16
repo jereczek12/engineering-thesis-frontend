@@ -1,0 +1,82 @@
+.square {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  transition: background-color 0.2s ease;
+
+  &.dark {
+    background: #8B4513;
+
+    &:hover {
+      background: #C27334;
+    }
+  }
+
+  &.light {
+    background: #DEB887;
+  }
+
+  &.highlight-green {
+    background: rgba(76, 175, 80, 0.6);
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background: rgba(76, 175, 80, 0.9);
+    }
+  }
+
+  &.highlight-red {
+    background: rgba(244, 67, 54, 0.6);
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background: rgba(244, 67, 54, 0.9);
+    }
+  }
+
+  transition: background-color 0.3s ease;
+
+  &.dark.intermediate, &.dark.selected {
+    background: mix(#8B4513, #2196F3, 40%);
+    
+    &:hover {
+      background: mix(#8B4513, #2196F3, 0%);
+    }
+  }
+
+  .square-number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.5);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+  }
+}

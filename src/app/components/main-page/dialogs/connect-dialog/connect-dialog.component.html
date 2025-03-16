@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Connect to Game</h1>
+<div mat-dialog-content>
+  <mat-tab-group>
+    <mat-tab label="Specific Game">
+      <p>Enter the game ID to connect:</p>
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Game ID</mat-label>
+        <input matInput [(ngModel)]="gameID">
+      </mat-form-field>
+      <div class="tab-actions">
+        <button mat-button [disabled]="!gameID" (click)="connect()">Connect</button>
+      </div>
+    </mat-tab>
+    <mat-tab label="Random Game">
+      <p>Connect to a random available game:</p>
+      <div class="tab-actions">
+        <button mat-button (click)="connectRandom()">Find Random Game</button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+</div>

@@ -1,0 +1,18 @@
+<div class="main-container">
+  <mat-card class="main-card">
+    <h1 *ngIf="username">Welcome {{ username }}</h1>
+
+    <button mat-raised-button color="primary" class="main-button" (click)="createPvpGame()">
+      Create a PVP Game
+    </button>
+    <button mat-raised-button color="primary" class="main-button" (click)="connectToPvpGame()">
+      Connect to PVP Game
+    </button>
+    <button mat-raised-button color="primary" class="main-button" (click)="openDifficultyDialog()">
+      Create CPU Game
+    </button>
+    <button mat-raised-button color="primary" class="main-button" routerLink="/history">
+      Games History
+    </button>
+  </mat-card>
+</div>

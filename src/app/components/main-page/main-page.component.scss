@@ -1,0 +1,25 @@
+// In main-page.component.scss
+.main-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 2rem;
+
+  .main-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: white;
+
+    .main-button {
+      margin: 1rem 0;
+      padding: 1rem;
+      transition: transform 0.2s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

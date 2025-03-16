@@ -1,0 +1,16 @@
+<!-- board.component.html -->
+<table>
+  <tr *ngFor="let row of boardState.board; let i = index">
+    <td *ngFor="let cell of row; let j = index">
+      <app-square [state]="cell"
+                  [number]="getSquareNumber(j, i)"
+                  [isDark]="getSquareNumber(j, i) !== null"
+                  [isSelected]="selectedSquareNumber === getSquareNumber(j, i)"
+                  [highlightColor]="getHighlightColor(getSquareNumber(j, i))"
+                  [isIntermediate]="isIntermediateSquare(getSquareNumber(j, i))"
+                  (squareClick)="onSquareSelected($event)"
+                  (pieceClick)="onPieceClick($event)">
+      </app-square>
+    </td>
+  </tr>
+</table>

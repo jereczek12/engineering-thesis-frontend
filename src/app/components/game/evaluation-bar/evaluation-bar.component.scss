@@ -1,0 +1,78 @@
+// evaluation-bar.component.scss
+.evaluation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  height: 400px;
+
+  .evaluation-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: monospace;
+  }
+
+  .bar-container {
+    width: 30px;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #303030;
+    position: relative;
+  }
+
+  .bar-background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .bar-section {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+
+    &.red-section {
+      background: rgba(244, 67, 54, 0.6);
+      top: 0;
+    }
+
+    &.green-section {
+      background: rgba(76, 175, 80, 0.6);
+    }
+  }
+
+  .center-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #666;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .indicator {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #64B5F6;
+    transform: translateY(-50%);
+    transition: top 0.3s ease;
+    z-index: 3;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background: #64B5F6;
+      border-radius: 50%;
+    }
+  }
+}

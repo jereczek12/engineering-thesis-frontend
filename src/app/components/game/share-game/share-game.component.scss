@@ -1,0 +1,33 @@
+/* app/components/game/share-game/share-game.component.scss */
+.share-container {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+    .game-id-box {
+      display: flex;
+      align-items: center;
+      
+      .game-id-label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      
+      .game-id {
+        font-family: monospace;
+        padding: 4px 8px;
+        background: #f1f1f1;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+    }
+    
+    .share-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
